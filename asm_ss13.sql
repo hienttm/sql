@@ -31,4 +31,15 @@ select *from Customers order by Name asc;
 --5b Liệt kê các sđt của người có tên là Nguyễn Văn An
 
 select *from Contacts where CustomerId in 
-	(select Id from Customers where Name in (N'Nguyễn Văn An');
+	(select Id from Customers where Name in (N'Nguyễn Văn An'));
+
+--5c. liệt kê những người có ngày sinh là 12/12/09
+select *from Customers where Birthday in ('2009-12-12');
+
+--6a. tìm số lượng sđt của mỗi người trong danh bạ
+
+select CustomerId, COUNT(Id) as soluongsdt from Contacts group by CustomerId;
+
+--6b. tổng số người trong danh bạc sinh vào tháng 12
+select count(Id) as tongsonguoit12 from Customers where month(Birthday)=12;
+
