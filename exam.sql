@@ -1,3 +1,5 @@
+create database SellingPoint;
+
 create table Categories(
 	CateID char(6) primary key,
 	CateName nvarchar(100) not null unique,
